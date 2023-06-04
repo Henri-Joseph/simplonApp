@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <title>Modifier des candidats</title>
+</head>
+<body>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <img src="https://th.bing.com/th/id/OIP.qgbpS3aBgLC8yUNlDsdK0wHaCQ?pid=ImgDet&rs=1" alt="">
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+    <br><br>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <form method="POST" action="/update/{{editcandidats.id}}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label class="form-label">Ref</label>
+                    <input type="text" class="form-control" name="id" value="{{editcandidats.id}}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Nom</label>
+                    <input type="text" class="form-control" name="lastname" value="{{editcandidats.lastname}}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Prénoms</label>
+                    <input type="text" class="form-control" name="firstname" value="{{editcandidats.firstname}}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" aria-describedby="emailHelp" value="{{editcandidats.email}}" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">contact</label>
+                    <input type="text" class="form-control" name="contact" value="{{editcandidats.contact}}" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+            </form>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <!-- Remove the container if you want to extend the Footer to full width. -->
+    <div class="container my-5">
+
+        <section class="">
+        <!-- Footer -->
+        <footer class="text-center text-white" style="background-color: #0a4275;">
+    
+            <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2023 Copyright:
+                <a class="text-white" href="https://simplon.ci/aws/" target="_blank">SIMPLON CI - AWS Test Selection</a>
+            </div>
+            <!-- Copyright -->
+        </footer>
+        <!-- Footer -->
+    </section>
+        
+    </div>
+</body>
+
+</html>
